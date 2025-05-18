@@ -38,7 +38,7 @@ if uploaded_file is not None:
         wc_text = ' '.join(words)
 
         wordcloud = WordCloud(
-            font_path='/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc',
+            font_path="fonts/NotoSansJP-VariableFont_wght.ttf",
             width=1200, height=600, background_color='white', colormap='tab20'
         ).generate(wc_text)
 
