@@ -38,7 +38,7 @@ if uploaded_file is not None:
         wc_text = ' '.join(words)
 
         wordcloud = WordCloud(
-            font_path="fonts/NotoSansJP-Bold.otf",
+            font_path="fonts/NotoSansJP-Bold.ttf",
             width=1600,
             height=800,
             background_color='white',
