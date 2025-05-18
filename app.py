@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 from janome.tokenizer import Tokenizer
 from io import BytesIO
 from collections import Counter
+import random
 
 st.title("メッセージ ワードクラウド自動生成アプリ")
 
@@ -37,12 +38,18 @@ if uploaded_file is not None:
                         words.append(token.base_form)
         wc_text = ' '.join(words)
 
+        # AnyGiftのブランドカラー例
+        brand_colors = ["#FF6F61", "#FFD166", "#06D6A0", "#118AB2", "#073B4C"]
+
+        def brand_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+            return random.choice(brand_colors)
+
         wordcloud = WordCloud(
             font_path="fonts/NotoSansJP-Bold.ttf",
             width=1600,
             height=800,
             background_color='white',
-            colormap='tab20',
+            color_func=brand_color_func,
             font_step=1,
             prefer_horizontal=1.0,
             max_font_size=400
