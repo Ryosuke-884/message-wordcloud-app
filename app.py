@@ -38,8 +38,14 @@ if uploaded_file is not None:
         wc_text = ' '.join(words)
 
         wordcloud = WordCloud(
-            font_path="fonts/NotoSansJP-VariableFont_wght.ttf",
-            width=1200, height=600, background_color='white', colormap='tab20'
+            font_path="fonts/NotoSansJP-Bold.otf",
+            width=1600,
+            height=800,
+            background_color='white',
+            colormap='tab20',
+            font_step=1,
+            prefer_horizontal=1.0,
+            max_font_size=400
         ).generate(wc_text)
 
         st.subheader("ワードクラウド")
